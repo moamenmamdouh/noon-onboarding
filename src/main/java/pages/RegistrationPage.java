@@ -16,7 +16,7 @@ public class RegistrationPage {
 
     /**
      * Method created to fill the email field for registration
-     * @param email
+     * @param email -- String of Email
      */
     public void addEmail(String email){
         driver.findElement(emailField).sendKeys(email);
@@ -24,7 +24,7 @@ public class RegistrationPage {
 
     /**
      * Method created to fill the password field for registration
-     * @param password
+     * @param password -- string of password
      */
     public void addPassword(String password){
         driver.findElement(passwordField).sendKeys(password);
