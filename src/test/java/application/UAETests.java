@@ -2,16 +2,16 @@ package application;
 
 import base.BaseTests;
 import org.testng.annotations.Test;
+import pages.BasicTabPage;
 import pages.ListingPage;
 import pages.OTPPage;
 import pages.PhoneRegistrationPage;
-import pages.FoodAppPage;
 
 public class UAETests extends BaseTests {
 
     @Test
     public void firstRegistrationTest(){
-        registrationPage.addEmail("uaeautomation100@test.com");
+        registrationPage.addEmail("food@automation1.com");
         registrationPage.addPassword("12345678");
         PhoneRegistrationPage phoneRegistration = registrationPage.clickNext();
         phoneRegistration.waitPhoneRegistration();
@@ -22,7 +22,8 @@ public class UAETests extends BaseTests {
         ListingPage listingPage = otpPage.clickNext();
         listingPage.waitListing();
         listingPage.clickFillApp();
-        FoodAppPage foodAppPage = listingPage.createFoodApp();
+        listingPage.scrollToFoodApp();
+        BasicTabPage basicTab = listingPage.createFoodApp();
     }
 
 }

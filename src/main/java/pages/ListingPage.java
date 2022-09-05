@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -26,8 +27,13 @@ public class ListingPage {
 
 
 
-    public FoodAppPage createFoodApp(){
+    public BasicTabPage createFoodApp(){
         driver.findElements(appCreationOptions).get(0).click();
-        return new FoodAppPage(driver);
+        return new BasicTabPage(driver);
+    }
+
+    public void scrollToFoodApp(){
+        String script = "arguments[0].scrollIntoView();";
+        ((JavascriptExecutor)driver).executeScript(script, driver.findElements(appCreationOptions).get(0));
     }
 }
